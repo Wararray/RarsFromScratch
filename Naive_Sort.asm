@@ -1,4 +1,4 @@
-# "Sort" Program: RISC-V Implementation
+# "Naive Sort" Program: RISC-V Implementation
 # Study based on:
 ## Patterson and Hennessy,     5th Edition (RISC-V)
 ## Professor PhD. LAMAR,M.V.,  class notes
