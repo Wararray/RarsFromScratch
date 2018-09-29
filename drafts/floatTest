@@ -1,0 +1,19 @@
+	# Creating mantissa of the "New Number"
+	li			t0, 0xAAAFFFFF			    # ODD OR EVEN?
+	li			t1, 0x007FFFFF   			# Mantissa	of "Ones"
+	li		    t2, 0x00100000			    # 2^24. The hidden '1' in IEEE754 Notation
+	add			t1, t1, t2					# 1+Mantissa	
+	
+	fcvt.s.w 	ft0,t0				    	# Represents 'ODD OR EVEN' in IEEE754
+	fmv.x.s		t2, ft0					    # t2 receives bit-to-bit copy of IEEE754 representation
+
+	and 		t3, t1, t2					# New mantissa done bit-to-bit
+	
+	# Extracting expoent and creating Fixed Point notation
+	
+	li			t1, 0x7F800000				# Expoent of "ones"
+	and 		s2, t1, t2					# New Expoent done bit-to-bit
+	addi		s2, s2, -127				# Extracting IEEE745 offset 
+	sll			s2, t3, s2					# Mantissa * 2 ^ (exp)
+	
+				
