@@ -9,7 +9,7 @@
 # Sin(Thetha) = SUM: [ [( -1 )^N] / 2*N + 1] * Theta^(2N + 1)             #
 #                                                                         #
 # Hypotheses: 															  #
-#				  N	= 10											      #	
+#				N	= 10											      #	
 #				fa0	= (radius)                                            #
 #				fa1 = (thetha)											  #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -17,8 +17,8 @@
 
 _SIN_THETA:				   
             # Hypothesis and Inputs
-		    addi	a0, zero,  3					# This is N value
-			addi	a1, zero,  5					# Simulating get thetha without memory access
+		    addi	a0, zero,  10					# This is N value
+			addi	a1, zero,  45					# Simulating get thetha without memory access
 			addi	a2,	zero,  -1					# Simulating get numerator without memory access
 			# # # # # # # # # # # #
 		
