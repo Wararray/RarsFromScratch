@@ -1,0 +1,33 @@
+# "Prints an Overflow message using syscall" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Hypotheses:                                                            #
+#          - This prcedure was called by *call*                           #
+#          - *call* is made by: auipc and jalr                            #
+#          - *call* saves in *ra* the address of imadiate next instruction#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+.data
+msgERROR:	.string	"Overflow detected at: "
+
+.text
+_Start:			
+			add		ra, ra, sp		# Just to test some hexa value in ra
+			
+			la		a0, msgERROR
+			li		a7, 4
+			ecall
+			
+			addi	a0, ra, -8
+			li		a7, 34
+			ecall			
+		
+			#Bye-Bye
+			addi	a7, zero, 10
+			ecall
+_END:
+

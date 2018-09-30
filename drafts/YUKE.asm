@@ -4,11 +4,10 @@
 ## Professor PhD. LAMAR,M.V.,  class notes
 ## Contact: dias.unb@gmail.com
 
-# Pseudo: jr   t0    Must return:    PC = t0
 
-
-la		t0, LABEL			# Suppose an address to t0
-
-jalr	zero, t0, 0			# Pseudo
-
-LABEL:						# Suppose an address to t0
+		li 	t0, -5
+		call LABEL
+		li	t1, 10
+		li	t2, 20
+	
+LABEL:

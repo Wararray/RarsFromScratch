@@ -1,0 +1,17 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Pseudo: rorv   t0, t1, t2    Must return:    t0 = t1 rotated to right by t2 bits
+		
+		li 	t2, 0x5     			# Just to test
+		li	t1, 0xF0000000			# Just to tes
+			
+		li 	t0, 0x20				# 32d
+		sub	t0, t0, t2
+		sll	t2, t2, t0
+		srl	t1, t1, t0
+		or	t0, t1, t2
+
