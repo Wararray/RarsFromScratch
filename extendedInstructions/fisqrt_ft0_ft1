@@ -1,0 +1,22 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Pseudo: fisqrt   ft0, ft1    Must return:    ft0 = 1/sqrt(ft1)
+
+	# Pseudo requires only ft0 can e modified. All other resources must be preserved
+	addi sp, sp, -8
+	sw	 t0, 0(sp)
+	fsw	 ft1, 4(sp)						
+
+	li	 	 t0, 1
+	fcvt.s.w ft0, t0
+	fsqrt.s	 ft1, ft1
+	fdiv.s	 ft0, ft0,ft1
+	
+	lw	 t0, 0(sp)
+	flw	 ft1, 4(sp)
+	addi sp, sp, 8
+	  
