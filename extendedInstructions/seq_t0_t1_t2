@@ -1,0 +1,11 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Pseudo: seq   t0, t1, t2    Must return:    t0 = 1, if t1==t2, else t0 = 0
+
+		beq		t1, t2, EQUAL
+		addi	t0, 0
+EQUAL:	addi	t0, 1
