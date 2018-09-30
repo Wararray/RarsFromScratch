@@ -7,8 +7,8 @@
 # Pseudo: jr   t0    Must return:    PC = t0
 
 
-la		t0, LABEL			# Suppose an address to t0
+	la		t0, LABEL			# Suppose an address to t0
+	
+	jalr	zero, t0, 0			# Pseudo
 
-jalr	zero, t0, 0			# Pseudo
-
-LABEL:						# Suppose an address to t0
+	LABEL:						# Suppose an address to t0

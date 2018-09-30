@@ -1,0 +1,22 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Didatic Version - Not Optmized
+# Pseudo: addo   t0, t1, t2, OVERFLOW    Must return:    t0 = t1 + t2 OR Overflow
+
+		blt		t1, zero, nT1				# T1 is Negative
+		blt 	t2, zero, nT2				# T2 is Negative
+		add		t0, t1, t2					# T1 > 0 and T2 > 0
+		blt		t0, zero, OVERFLOW			# T0 < 0 ! wrong
+		j		EXIT
+nT2:	sub		t0, t1, t2					# T1> 0 and T2 < 0
+		blt		t0, zero, OVERFLOW			# T1 + T2 < 0 ! wrong
+		j		EXIT
+nT1:	sub		t0, t1, t2					# t0 = -T1 - t2	
+		blt		zero, t0, OVERFLOW			# t0 > 0
+		j 		EXIT
+OVERFLOW:
+EXIT:
