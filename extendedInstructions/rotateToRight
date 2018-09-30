@@ -7,11 +7,12 @@
 # Pseudo: rorv   t0, t1, t2    Must return:    t0 = t1 rotated to right by t2 bits
 		
 		li 	t2, 0x5     			# Just to test
-		li	t1, 0xF0000000			# Just to tes
+		li	t1, 0xF000000F			# Just to tes
 			
 		li 	t0, 0x20				# 32d
-		sub	t0, t0, t2
-		sll	t2, t2, t0
-		srl	t1, t1, t0
-		or	t0, t1, t2
+		sub	t0, t0, t2				# Must walk 32 - t2 bits
+		add	t2, zero,t1             # Copy t1 in t2
+		sll	t2, t2, t0				# Moving t2 to left 
+		srl	t1, t1, t0				# Moving t1 to right
+		or	t0, t1, t2				# Get final value
 
