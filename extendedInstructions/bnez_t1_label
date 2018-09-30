@@ -1,0 +1,19 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Pseudo: bnez t1,label       Must return:  If t0 !=0, ra = PC + 4 and PC = label, else PC = PC + 4
+	
+		 # Simulate Arguments 
+		 li		t1, 1					# Just to test
+		 la		t2, ADDRESS				# Testing		
+
+		 beq	t1, zero, isZERO
+		 jal	ADDRESS
+
+isZERO:
+
+
+ADDRESS:
