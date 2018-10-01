@@ -1,0 +1,46 @@
+# "Extended Instructions Series" Program: RISC-V Implementation
+# Study based on:
+## Patterson and Hennessy,     5th Edition (RISC-V)
+## Professor PhD. LAMAR,M.V.,  class notes
+## Contact: dias.unb@gmail.com
+
+# Pseudo: STMFD sp!,{r0-r12, lr}     Must return: stack all registers and the return address
+
+    addi    sp, sp, -120     # Space for 30 variables in memory
+
+    sw    ra,  000(sp)     # Save value in memory, by numeric order                             
+    sw    gp,  004(sp)     # Save value in memory, by numeric order                             
+    sw    tp,  008(sp)     # Save value in memory, by numeric order                             
+    sw    t0,   12(sp)     # Save value in memory, by numeric order                             
+    sw    t1,   16(sp)     # Save value in memory, by numeric order                             
+    sw    t2,   20(sp)     # Save value in memory, by numeric order                             
+    sw    t3,   24(sp)     # Save value in memory, by numeric order                             
+    sw    t4,   28(sp)     # Save value in memory, by numeric order                             
+    sw    t5,   32(sp)     # Save value in memory, by numeric order                             
+    sw    t6,   36(sp)     # Save value in memory, by numeric order                             
+    sw    s0,   40(sp)     # Save value in memory, by numeric order                             
+    sw    s1,   44(sp)     # Save value in memory, by numeric order                             
+    sw    s2,   48(sp)     # Save value in memory, by numeric order                             
+    sw    s3,   52(sp)     # Save value in memory, by numeric order                             
+    sw    s4,   56(sp)     # Save value in memory, by numeric order                             
+    sw    s5,   60(sp)     # Save value in memory, by numeric order                             
+    sw    s6,   64(sp)     # Save value in memory, by numeric order                             
+    sw    s7,   68(sp)     # Save value in memory, by numeric order                             
+    sw    s8,   72(sp)     # Save value in memory, by numeric order                             
+    sw    s9,   76(sp)     # Save value in memory, by numeric order                             
+    sw    s10,  80(sp)     # Save value in memory, by numeric order                             
+    sw    s11,  84(sp)     # Save value in memory, by numeric order                             
+    sw    a0,   88(sp)     # Save value in memory, by numeric order                             
+    sw    a1,   92(sp)     # Save value in memory, by numeric order                             
+    sw    a2,   96(sp)     # Save value in memory, by numeric order                             
+    sw    a3,  100(sp)     # Save value in memory, by numeric order                             
+    sw    a4,  104(sp)     # Save value in memory, by numeric order                             
+    sw    a5,  108(sp)     # Save value in memory, by numeric order                             
+    sw    a6,  112(sp)     # Save value in memory, by numeric order                             
+    sw    a7,  116(sp)     # Save value in memory, by numeric order
+    jal   end
+    end:                             
+    
+    # PC is ra + 4
+    # and sp is in la (sp)
+    # and zero value is zero, so don't be to be stored
